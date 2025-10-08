@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TP2_DetectionLangue.ViewModels
 {
-    public class TokenStatusViewModel : BaseViewModel
+    public class HomeViewModel : BaseViewModel
     {
     }
 }

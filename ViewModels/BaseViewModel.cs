@@ -8,5 +8,9 @@ namespace TP2_DetectionLangue.ViewModels
 {
     public class BaseViewModel
     {
+        public BaseViewModel()
+        {
+            
+        }
     }
 }

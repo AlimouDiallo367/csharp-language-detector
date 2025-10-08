@@ -4,9 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP2_DetectionLangue.Views"
+        xmlns:viewmodels="clr-namespace:TP2_DetectionLangue.ViewModels"
         mc:Ignorable="d"
-        Title="MainView" Height="450" Width="800">
+        Title="Détecteur de langue" Height="750" Width="920" x:Name="win">
+    <Window.DataContext>
+        <viewmodels:MainViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+            <local:HomeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:ConfigurationViewModel}">
+            <local:ConfigurationView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TokenStatusViewModel}">
+            <local:TokenStatusView/>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Configuration" Command="{Binding CmdGotoConfiguration}"/>
+            <MenuItem Header="Statut jeton" Command="{Binding CmdGotoTokenStatus}"/>
+        </Menu>
+
+        <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"/>
     </Grid>
 </Window>
