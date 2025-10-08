@@ -5,8 +5,50 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TP2_DetectionLangue.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="750" d:DesignWidth="920">
     <Grid Background="White">
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label Content="Entrez le texte pour lequel vous voulez détecter la langue : " Margin="10,20,0,20"/>
+            <TextBox Height="330" Margin="10,0,0,0"/>
+
+            <Rectangle Height="30"/>
+            <Button Content="Détecter" Width="200" Padding="10,5"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Label Content="Résultat de la détection : " Margin="0,20,0,20"/>
+            <ComboBox SelectedItem="FRENCH" 
+                      HorizontalAlignment="Center" 
+                      Width="150"
+                      Margin="0,0,0,40">
+                <ComboBoxItem Content="FRENCH"/>
+                <ComboBoxItem Content="ENGLISH"/>
+                <ComboBoxItem Content="SPANISH"/>
+            </ComboBox>
+
+            <Grid HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Langue : " Margin="0,5"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,5,0,5"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Confiance : " Margin="0,5"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,5,0,5"/>
+
+                <Label Grid.Row="2"  Grid.Column="0" Content="Est fiable : " Margin="0,5"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,5,0,5"/>
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>
