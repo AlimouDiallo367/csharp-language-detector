@@ -13,10 +13,10 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <Label Content="Entrez le texte pour lequel vous voulez détecter la langue : " Margin="10,20,0,20"/>
-            <TextBox Height="330" Margin="10,0,0,0"/>
+            <TextBox Height="330" Margin="10,0,0,0" Text="{Binding TextToDetect, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Rectangle Height="30"/>
-            <Button Content="Détecter" Width="200" Padding="10,5"/>
+            <Button Content="Détecter" Width="200" Padding="10,5" Command="{Binding DetectCommand}"/>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <Label Content="Résultat de la détection : " Margin="0,20,0,20"/>
