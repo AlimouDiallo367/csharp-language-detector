@@ -28,7 +28,7 @@
 
             <ComboBox ItemsSource="{Binding DetectedLanguages}" 
                       SelectedItem="{Binding SelectedLanguage}" 
-                      DisplayMemberPath="Language"
+                      DisplayMemberPath="FullLanguageName"
                       Width="200"
                       Margin="0,0,0,20"/>
             
@@ -44,7 +44,7 @@
                 </Grid.RowDefinitions>
 
                 <Label Grid.Row="0" Grid.Column="0" Content="Langue:" VerticalAlignment="Center"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SelectedLanguage.Language}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SelectedLanguage.FullLanguageName}"/>
 
                 <Label Grid.Row="1" Grid.Column="0" Content="Score (0-1):" VerticalAlignment="Center"/>
                 <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding SelectedLanguage.Score}"/>
