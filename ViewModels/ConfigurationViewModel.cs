@@ -11,7 +11,8 @@ namespace TP2_DetectionLangue.ViewModels
     public class ConfigurationViewModel : BaseViewModel
     {
         #region RelayCommands
-        public RelayCommand SaveCommand {  get; private set; }
+        public RelayCommand SaveCommand { get; private set; }
+        public RelayCommand CancelCommand { get; private set; }
         #endregion
 
         private string _apiToken;
@@ -30,6 +31,7 @@ namespace TP2_DetectionLangue.ViewModels
             ApiToken = Properties.Settings.Default.ApiToken;
 
             SaveCommand = new RelayCommand(SaveToken, CanSaveToken);
+            CancelCommand = new RelayCommand(Cancel, null);
         }
 
 
@@ -37,10 +39,22 @@ namespace TP2_DetectionLangue.ViewModels
         {
             Properties.Settings.Default.ApiToken = ApiToken;
             Properties.Settings.Default.Save();
+            MessageBox.Show("Le jeton a été sauvegardé avec succès !");
+            CloseWindow(obj);
         }
         private bool CanSaveToken(object? obj)
         {
             return !string.IsNullOrWhiteSpace(ApiToken);
         }
+
+        private void Cancel(object? obj)
+        {
+            CloseWindow(obj);
+        }
+        private void CloseWindow(object? obj)
+{
+    if (obj is Window window)
+        window.Close();
+}
     }
 }

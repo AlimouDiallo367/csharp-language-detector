@@ -23,7 +23,7 @@
             <Rectangle Height="30"/>
             <Button Content="Détecter" Width="200" Padding="10,5" Command="{Binding DetectCommand}"/>
         </StackPanel>
-        <StackPanel Grid.Column="1">
+        <!--<StackPanel Grid.Column="1">
             <Label Content="Résultat de la détection : " Margin="0,20,0,20"/>
             <ComboBox SelectedItem="FRENCH" 
                       HorizontalAlignment="Center" 
@@ -54,6 +54,15 @@
                 <Label Grid.Row="2"  Grid.Column="0" Content="Est fiable : " Margin="0,5"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,5,0,5"/>
             </Grid>
+        </StackPanel>-->
+        <StackPanel Grid.Column="1">
+            <Label Content="Résultat de la détection :" Margin="0,20,0,20"/>
+            
+            <Label Content="Langue détectée :" Margin="0,5"/>
+            <TextBlock Text="{Binding DetectedLanguage}" Margin="10,0,0,10"/>
+
+            <Label Content="Score (0-1) :" Margin="0,5"/>
+            <TextBlock Text="{Binding DetectionScore}" Margin="10,0,0,10"/>
         </StackPanel>
     </Grid>
 </UserControl>
