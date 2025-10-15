@@ -38,8 +38,12 @@ namespace TP2_DetectionLangue.ViewModels
             }
         }
         #endregion
+
+
+        private readonly LanguageService _languageService;
         public HomeViewModel()
         {
+            _languageService = new LanguageService();
             DetectCommand = new RelayCommand(Detect, CanDetect);
         }
 
@@ -60,12 +64,16 @@ namespace TP2_DetectionLangue.ViewModels
 
             try
             {
-                LanguageService service = new LanguageService();
-                var results = await service.DetectLanguageAsync(TextToDetect, token);
+                await _languageService.LoadSupportedLanguagesAsync(token);
+                //LanguageService service = new LanguageService();
+                //var results = await service.DetectLanguageAsync(TextToDetect, token);
+                
+                var results = await _languageService.DetectLanguageAsync(TextToDetect, token);
 
                 DetectedLanguages.Clear();
                 foreach (var r in results)
                 {
+                    r.FullLanguageName = _languageService.GetLanguageName(r.Language);
                     DetectedLanguages.Add(r);
                 }
 
