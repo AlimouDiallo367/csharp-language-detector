@@ -59,10 +59,10 @@
             <Label Content="Résultat de la détection :" Margin="0,20,0,20"/>
             
             <Label Content="Langue détectée :" Margin="0,5"/>
-            <TextBlock Text="{Binding DetectedLanguage}" Margin="10,0,0,10"/>
+            <TextBlock Text="{Binding DetectedLanguage}" Margin="10,5,0,5"/>
 
             <Label Content="Score (0-1) :" Margin="0,5"/>
-            <TextBlock Text="{Binding DetectionScore}" Margin="10,0,0,10"/>
+            <TextBlock Text="{Binding DetectedScore}" Margin="10,0,0,10"/>
         </StackPanel>
     </Grid>
 </UserControl>

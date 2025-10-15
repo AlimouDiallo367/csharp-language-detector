@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -17,16 +18,17 @@ namespace TP2_DetectionLangue.Models
         {
             _apiClient.SetHttpRequestHeader("Authorization", $"Bearer {token}");
 
-            var requestJson = JsonSerializer.Serialize(new { q = text });
-            var responseJson = await _apiClient.RequetePostAsync("detect", requestJson);
+            var jsonRequest = JsonSerializer.Serialize(new { q = text });
+            var jsonResponse = await _apiClient.RequetePostAsync("/detect", jsonRequest);
 
-            return JsonSerializer.Deserialize<LanguageCandidate[]>(responseJson);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<LanguageCandidate[]>(jsonResponse, options)
+                   ?? Array.Empty<LanguageCandidate>();
         }
     }
 
-    public class LanguageCandidate
-    {
-        public string language { get; set; }
-        public float score { get; set; }
-    }
 }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using TP2_DetectionLangue.Models;
@@ -12,7 +9,7 @@ namespace TP2_DetectionLangue.ViewModels
     public class HomeViewModel : BaseViewModel
     {
         #region RelayCommands
-        public RelayCommand DetectCommand {  get; private set; }
+        public RelayCommand DetectCommand { get; private set; }
         #endregion
 
         private string _textToDetect;
@@ -37,13 +34,13 @@ namespace TP2_DetectionLangue.ViewModels
             }
         }
 
-        private double _detectionScore;
-        public double DetectionScore
+        private double _detectedScore;
+        public double DetectedScore
         {
-            get => _detectionScore;
+            get => _detectedScore;
             set
             {
-                _detectionScore = value;
+                _detectedScore = value;
                 OnPropertyChanged();
             }
         }
@@ -68,22 +65,23 @@ namespace TP2_DetectionLangue.ViewModels
                 return;
             }
 
-            // TODO : Appel API detectlanguage.com et ne pas oublier async
             try
             {
                 LanguageService service = new LanguageService();
                 var results = await service.DetectLanguageAsync(TextToDetect, token);
+
                 if (results != null && results.Length > 0)
                 {
-                    DetectedLanguage = results[0].language;
-                    DetectionScore = results[0].score;
+                    DetectedLanguage = results[0].Language;
+                    DetectedScore = results[0].Score;
                 }
                 else
                 {
                     DetectedLanguage = "Unknown";
-                }            
+                    DetectedScore = 0;
+                }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(
                     $"Erreur lors de la détection : {ex.Message}",
@@ -100,3 +98,4 @@ namespace TP2_DetectionLangue.ViewModels
         }
     }
 }
+
