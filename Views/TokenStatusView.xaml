@@ -33,29 +33,28 @@
             </Grid.RowDefinitions>
             
             <Label Grid.Row="0" Grid.Column="0" Content="Date : " Padding="0,5" Margin="0,10,0,0"/>
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CurrentDate}" FontWeight="Bold" Margin="10,13,0,3"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CurrentDate}" Margin="10,13,0,3"/>
             
             <Label Grid.Row="1" Grid.Column="0" Content="Requêtes aujourd'hui : " Padding="0,5"/>
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding TodayRequests}" FontWeight="Bold" Margin="10,8,0,3"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding TodayRequests}" Margin="10,8,0,3"/>
             
             <Label Grid.Row="2" Grid.Column="0" Content="Octets aujourd'hui : " Padding="0,5" Margin="0,0,0,15"/>
-            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding TodayBytes}" FontWeight="Bold" Margin="10,8,0,18"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding TodayBytes}" Margin="10,8,0,18"/>
             
             <Label Grid.Row="3" Grid.Column="0" Content="Plan : "/>
-            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding CurrentPlan}" FontWeight="Bold" Margin="10,8,0,3"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding CurrentPlan}"  Margin="10,8,0,3"/>
             
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="Expiration du plan : " HorizontalAlignment="Center"/>
-            
-            <TextBlock Grid.Row="5" Grid.Column="0" Text="{Binding ExpirationDate}" FontWeight="Bold" Margin="0,5,0,5" HorizontalAlignment="Center"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="Expiration du plan : " Padding="0,5"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding PlanExpirationDate}" Margin="10,8,0,3"/>
             
             <Label Grid.Row="6" Grid.Column="0" Content="Limite requêtes quotidienne : " Padding="0,5"/>
-            <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding DailyRequestLimit}" FontWeight="Bold" Margin="10,8,0,3"/>
+            <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding DailyRequestsLimit}"  Margin="10,8,0,3"/>
             
             <Label Grid.Row="7" Grid.Column="0" Content="Limite octets quotidienne : " Padding="0,5"/>
-            <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding DailyByteLimit}" FontWeight="Bold" Margin="10,8,0,3"/>
+            <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding DailyBytesLimit}" Margin="10,8,0,3"/>
             
             <Label Grid.Row="8" Grid.Column="0" Content="Statut : " Padding="0,5" Margin="0,15,0,0"/>
-            <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding TokenStatus}" FontWeight="Bold" Margin="10,18,0,3"/>
+            <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding TokenStatus}" Margin="10,18,0,3"/>
             
         </Grid>
         
@@ -63,7 +62,10 @@
                 HorizontalAlignment="Center" 
                 Width="100" 
                 Padding="10,5"
-                Margin="0,20,0,0"/>
+                Margin="0,20,0,0"
+                Command="{Binding CloseCommand}" 
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+        />
         
     </StackPanel>
 </Window>

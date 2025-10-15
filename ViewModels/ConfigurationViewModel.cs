@@ -52,9 +52,9 @@ namespace TP2_DetectionLangue.ViewModels
             CloseWindow(obj);
         }
         private void CloseWindow(object? obj)
-{
-    if (obj is Window window)
-        window.Close();
-}
+        {
+            if (obj is Window window)
+                window.Close();
+        }
     }
 }
