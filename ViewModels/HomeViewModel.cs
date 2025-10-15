@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows;
 using TP2_DetectionLangue.Models;
@@ -12,6 +13,7 @@ namespace TP2_DetectionLangue.ViewModels
         public RelayCommand DetectCommand { get; private set; }
         #endregion
 
+        #region Properties
         private string _textToDetect;
         public string TextToDetect
         {
@@ -23,28 +25,19 @@ namespace TP2_DetectionLangue.ViewModels
             }
         }
 
-        private string _detectedLanguage;
-        public string DetectedLanguage
+        public ObservableCollection<LanguageCandidate> DetectedLanguages { get; private set; } = new ObservableCollection<LanguageCandidate>();
+
+        private LanguageCandidate _selectedLanguage;
+        public LanguageCandidate SelectedLanguage
         {
-            get => _detectedLanguage;
+            get => _selectedLanguage;
             set
             {
-                _detectedLanguage = value;
+                _selectedLanguage = value;
                 OnPropertyChanged();
             }
         }
-
-        private double _detectedScore;
-        public double DetectedScore
-        {
-            get => _detectedScore;
-            set
-            {
-                _detectedScore = value;
-                OnPropertyChanged();
-            }
-        }
-
+        #endregion
         public HomeViewModel()
         {
             DetectCommand = new RelayCommand(Detect, CanDetect);
@@ -70,15 +63,15 @@ namespace TP2_DetectionLangue.ViewModels
                 LanguageService service = new LanguageService();
                 var results = await service.DetectLanguageAsync(TextToDetect, token);
 
-                if (results != null && results.Length > 0)
+                DetectedLanguages.Clear();
+                foreach (var r in results)
                 {
-                    DetectedLanguage = results[0].Language;
-                    DetectedScore = results[0].Score;
+                    DetectedLanguages.Add(r);
                 }
-                else
+
+                if (DetectedLanguages.Count > 0)
                 {
-                    DetectedLanguage = "Unknown";
-                    DetectedScore = 0;
+                    SelectedLanguage = DetectedLanguages[0];
                 }
             }
             catch (Exception ex)

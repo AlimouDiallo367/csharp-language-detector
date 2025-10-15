@@ -30,7 +30,8 @@ namespace TP2_DetectionLangue.ViewModels
         {
             ApiToken = Properties.Settings.Default.ApiToken;
 
-            SaveCommand = new RelayCommand(SaveToken, CanSaveToken);
+            //SaveCommand = new RelayCommand(SaveToken, CanSaveToken);
+            SaveCommand = new RelayCommand(SaveToken, null);
             CancelCommand = new RelayCommand(Cancel, null);
         }
 
