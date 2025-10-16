@@ -9,6 +9,12 @@ namespace TP2_DetectionLangue.Models
     {
         private readonly ApiClient _apiClient;
         private Dictionary<string, string> _languageMap;
+        public string GetLanguageName(string code)
+        {
+            if (_languageMap == null) return code; // si la liste n'est pas encore chargée
+            return _languageMap.ContainsKey(code) ? _languageMap[code] : code;
+        }
+
 
         public LanguageService()
         {
@@ -67,16 +73,6 @@ namespace TP2_DetectionLangue.Models
                 }
             }
         }
-        // Classe interne pour la désérialisation des langues
-        private class LanguageInfo
-        {
-            public string Code { get; set; }
-            public string Name { get; set; }
-        }
-        public string GetLanguageName(string code)
-        {
-            if (_languageMap == null) return code; // si la liste n'est pas encore chargée
-            return _languageMap.ContainsKey(code) ? _languageMap[code] : code;
-        }
+               
     }
 }

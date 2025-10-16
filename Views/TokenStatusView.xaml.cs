@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TP2_DetectionLangue.ViewModels;
 
 namespace TP2_DetectionLangue.Views
 {
@@ -22,6 +23,12 @@ namespace TP2_DetectionLangue.Views
         public TokenStatusView()
         {
             InitializeComponent();
+
+            if (this.DataContext is TokenStatusViewModel vm)
+            {
+                
+                vm.LoadTokenStatusAsync();
+            }
         }
     }
 }

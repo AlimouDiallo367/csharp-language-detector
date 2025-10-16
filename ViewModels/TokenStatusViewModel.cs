@@ -106,17 +106,20 @@ namespace TP2_DetectionLangue.ViewModels
         public TokenStatusViewModel()
         {
             CloseCommand = new RelayCommand(CloseWindow, null);
-            LoadTokenStatusAsync();
+            // LoadTokenStatusAsync
         }
 
-
-        private async void LoadTokenStatusAsync()
+        public async void LoadTokenStatusAsync()
         {
             try
             {
                 var token = Properties.Settings.Default.ApiToken;
 
-                if (string.IsNullOrWhiteSpace(token))
+                
+                LanguageService service = new LanguageService();
+                var status = await service.GetTokenStatusAsync(token);
+
+                if (status == null || status.Status != "ACTIVE" || string.IsNullOrWhiteSpace(token))
                 {
                     MessageBox.Show(
                         "Jeton non valide.",
@@ -127,29 +130,14 @@ namespace TP2_DetectionLangue.ViewModels
                     return;
                 }
 
-                LanguageService service = new LanguageService();
-                var status = await service.GetTokenStatusAsync(token);
-
-                if (status != null)
-                {
-                    CurrentDate = status.Date;
-                    TodayRequests = status.Requests;
-                    TodayBytes = status.Bytes;
-                    CurrentPlan = status.Plan;
-                    PlanExpirationDate = status.Plan_Expires;
-                    DailyRequestsLimit = status.Daily_Requests_Limit;
-                    DailyBytesLimit = status.Daily_Bytes_Limit;
-                    TokenStatus = status.Status;
-                }
-                else
-                {
-                    MessageBox.Show(
-                        "Impossible de récupérer les informations du jeton.",
-                        "Erreur",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error
-                    );
-                }
+                CurrentDate = status.Date;
+                TodayRequests = status.Requests;
+                TodayBytes = status.Bytes;
+                CurrentPlan = status.Plan;
+                PlanExpirationDate = status.Plan_Expires;
+                DailyRequestsLimit = status.Daily_Requests_Limit;
+                DailyBytesLimit = status.Daily_Bytes_Limit;
+                TokenStatus = status.Status;
             }
             catch (Exception ex)
             {
