@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:TP2_DetectionLangue.Views"
         xmlns:viewmodels="clr-namespace:TP2_DetectionLangue.ViewModels"
         mc:Ignorable="d"
-        Title="Détecteur de langue" Height="750" Width="920" x:Name="win">
+        Title="Détecteur de langue" Height="750" Width="920" x:Name="win" Icon="/Resources/globe.ico"
+        >
     <Window.DataContext>
         <viewmodels:MainViewModel/>
     </Window.DataContext>

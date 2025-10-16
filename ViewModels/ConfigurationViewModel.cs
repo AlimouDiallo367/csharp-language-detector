@@ -40,7 +40,7 @@ namespace TP2_DetectionLangue.ViewModels
         {
             Properties.Settings.Default.ApiToken = ApiToken;
             Properties.Settings.Default.Save();
-            MessageBox.Show("Le jeton a été sauvegardé avec succès !");
+            MessageBox.Show("Le jeton a été sauvegardé avec succès !", "Confirmation", MessageBoxButton.OK, MessageBoxImage.Information);
             CloseWindow(obj);
         }
         private bool CanSaveToken(object? obj)

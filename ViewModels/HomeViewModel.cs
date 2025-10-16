@@ -83,8 +83,8 @@ namespace TP2_DetectionLangue.ViewModels
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Erreur lors de la détection : {ex.Message}",
-                    "Erreur API",
+                    $"Unauthorized",
+                    "Erreur",
                     MessageBoxButton.OK,
                     MessageBoxImage.Error
                 );

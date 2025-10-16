@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodels="clr-namespace:TP2_DetectionLangue.ViewModels"
         mc:Ignorable="d"
-        Title="Statut de jeton" Height="430" Width="350"
+        Title="Statut de jeton" Height="430" Width="350" Icon="/Resources/globe.ico"
         >
 
     <Window.DataContext>

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using TP2_DetectionLangue.Models;
 using TP2_DetectionLangue.ViewModels.Commands;
 
@@ -142,8 +137,8 @@ namespace TP2_DetectionLangue.ViewModels
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Erreur lors du chargement du statut du jeton : {ex.Message}",
-                    "Erreur API",
+                    $"Unauthorized : {ex.Message}",
+                    "Erreur",
                     MessageBoxButton.OK,
                     MessageBoxImage.Error
                 );

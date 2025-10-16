@@ -9,15 +9,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\globe.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ViewModels\Converters\" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\globe.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\OtherResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OtherResources.resx</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\OtherResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OtherResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
