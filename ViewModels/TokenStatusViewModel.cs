@@ -26,8 +26,8 @@ namespace TP2_DetectionLangue.ViewModels
             }
         }
 
-        private int _todayRequests;
-        public int TodayRequests
+        private int? _todayRequests;
+        public int? TodayRequests
         {
             get => _todayRequests;
             set
@@ -37,8 +37,8 @@ namespace TP2_DetectionLangue.ViewModels
             }
         }
 
-        private int _todayBytes;
-        public int TodayBytes
+        private int? _todayBytes;
+        public int? TodayBytes
         {
             get => _todayBytes;
             set
@@ -70,8 +70,8 @@ namespace TP2_DetectionLangue.ViewModels
             }
         }
 
-        private int _dailyRequestsLimit;
-        public int DailyRequestsLimit
+        private int? _dailyRequestsLimit;
+        public int? DailyRequestsLimit
         {
             get => _dailyRequestsLimit;
             set
@@ -81,8 +81,8 @@ namespace TP2_DetectionLangue.ViewModels
             }
         }
 
-        private int _dailyBytesLimit;
-        public int DailyBytesLimit
+        private int? _dailyBytesLimit;
+        public int? DailyBytesLimit
         {
             get => _dailyBytesLimit;
             set
