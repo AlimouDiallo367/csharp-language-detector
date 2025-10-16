@@ -65,8 +65,6 @@ namespace TP2_DetectionLangue.ViewModels
             try
             {
                 await _languageService.LoadSupportedLanguagesAsync(token);
-                //LanguageService service = new LanguageService();
-                //var results = await service.DetectLanguageAsync(TextToDetect, token);
                 
                 var results = await _languageService.DetectLanguageAsync(TextToDetect, token);
 
