@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP2_DetectionLangue.Models
+namespace LanguageDetector.Models
 {
     public class LanguageInfo
     {

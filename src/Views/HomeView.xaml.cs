@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TP2_DetectionLangue.Views
+namespace LanguageDetector.Views
 {
     /// <summary>
     /// Logique d'interaction pour HomeView.xaml

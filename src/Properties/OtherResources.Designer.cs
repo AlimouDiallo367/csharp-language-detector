@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TP2_DetectionLangue.Properties {
+namespace LanguageDetector.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TP2_DetectionLangue.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TP2_DetectionLangue.Properties.OtherResources", typeof(OtherResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LanguageDetector.Properties.OtherResources", typeof(OtherResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

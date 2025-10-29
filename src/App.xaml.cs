@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace TP2_DetectionLangue
+namespace LanguageDetector
 {
     /// <summary>
     /// Interaction logic for App.xaml

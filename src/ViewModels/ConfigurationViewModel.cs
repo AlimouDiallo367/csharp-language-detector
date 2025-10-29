@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using TP2_DetectionLangue.ViewModels.Commands;
+using LanguageDetector.ViewModels.Commands;
 
-namespace TP2_DetectionLangue.ViewModels
+namespace LanguageDetector.ViewModels
 {
     public class ConfigurationViewModel : BaseViewModel
     {

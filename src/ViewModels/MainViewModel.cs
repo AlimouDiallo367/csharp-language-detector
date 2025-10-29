@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP2_DetectionLangue.ViewModels.Commands;
+using LanguageDetector.ViewModels.Commands;
 
-namespace TP2_DetectionLangue.ViewModels
+namespace LanguageDetector.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {

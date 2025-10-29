@@ -11,9 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TP2_DetectionLangue.ViewModels;
+using LanguageDetector.ViewModels;
 
-namespace TP2_DetectionLangue.Views
+namespace LanguageDetector.Views
 {
     /// <summary>
     /// Logique d'interaction pour TokenStatusView.xaml

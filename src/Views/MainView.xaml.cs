@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace TP2_DetectionLangue.Views
+namespace LanguageDetector.Views
 {
     /// <summary>
     /// Logique d'interaction pour MainView.xaml

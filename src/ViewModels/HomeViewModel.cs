@@ -2,10 +2,10 @@
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows;
-using TP2_DetectionLangue.Models;
-using TP2_DetectionLangue.ViewModels.Commands;
+using LanguageDetector.Models;
+using LanguageDetector.ViewModels.Commands;
 
-namespace TP2_DetectionLangue.ViewModels
+namespace LanguageDetector.ViewModels
 {
     public class HomeViewModel : BaseViewModel
     {

@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP2_DetectionLangue.ViewModels
+namespace LanguageDetector.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged 
     {

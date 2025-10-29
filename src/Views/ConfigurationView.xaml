@@ -1,10 +1,10 @@
-﻿<Window x:Class="TP2_DetectionLangue.Views.ConfigurationView"
+﻿<Window x:Class="LanguageDetector.Views.ConfigurationView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TP2_DetectionLangue.Views"
-        xmlns:viewmodels="clr-namespace:TP2_DetectionLangue.ViewModels"
+        xmlns:local="clr-namespace:LanguageDetector.Views"
+        xmlns:viewmodels="clr-namespace:LanguageDetector.ViewModels"
         mc:Ignorable="d"
         Title="Configuration" Height="350" Width="360" Icon="/Resources/globe.ico"
         >
